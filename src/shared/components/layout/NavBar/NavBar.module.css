@@ -1,0 +1,257 @@
+.wrapper {
+  width: 100%;
+  height: 70px;
+}
+
+.navbar {
+  position: fixed;
+  inset: 0 0 auto 0;
+
+  width: 100%;
+  height: 70px;
+
+  display: grid;
+  grid-template-columns: auto minmax(250px, 1fr) auto auto;
+  align-items: center;
+  gap: 16px;
+
+  padding: 0 16px;
+
+  background: #0b1e57;
+  z-index: 100;
+}
+
+/* desktop */
+
+.logoRow {
+  display: contents;
+}
+
+.searchRow {
+  display: contents;
+}
+
+.menuDesktop {
+  display: flex;
+  gap: 8px;
+}
+
+.actionsDesktop {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 6px;
+  margin-left: 14px;
+}
+
+.cartButton {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carritoIcon {
+  width: 28px;
+  color: #fff;
+}
+
+.cartCount {
+  position: absolute;
+  top: -2px;
+  right: -4px;
+
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+
+  background: #2f5acf;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+/* hidden desktop */
+
+.hamburger,
+.drawer,
+.overlay {
+  display: none;
+}
+
+
+/* ─── MOBILE ─────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+
+  .wrapper {
+    height: 130px;
+  }
+
+  .navbar {
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .logoRow {
+    display: flex;
+    align-items: center;
+  }
+
+  .searchRow {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .menuDesktop,
+  .actionsDesktop {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #1951f7;
+    color: white;
+
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .overlay {
+    display: block;
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.4);
+
+    z-index: 998;
+  }
+
+  .drawer {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 280px;
+    height: 100vh;
+
+    padding: 0;
+
+    background: white;
+
+    z-index: 999;
+
+    box-shadow: 6px 0 20px rgba(0, 0, 0, 0.18);
+    overflow-y: auto;
+  }
+
+  /* Logo en el drawer */
+  .drawerLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 20px 20px;
+    border-bottom: 1px solid #e8eaf0;
+  }
+
+  .drawerLogoImg {
+    max-width: 160px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Links del drawer con estilo uniforme */
+  .drawerLink {
+    display: flex;
+    align-items: center;
+
+    padding: 16px 20px;
+
+    color: #0b1e57;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+
+    border-bottom: 1px solid #e8eaf0;
+
+    transition: background 0.15s;
+  }
+
+  .drawerLink:active {
+    background: #f0f3ff;
+  }
+
+  /* Fila de categorías con arrow */
+  .drawerCategoriaRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 16px 20px;
+
+    border-bottom: 1px solid #e8eaf0;
+  }
+
+  .drawerCategoriaRow > * {
+    color: #0b1e57;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+  }
+
+  .drawerArrow {
+    width: 18px;
+    height: 18px;
+    color: #0b1e57;
+    flex-shrink: 0;
+  }
+
+  .cartButtonMobile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 16px 20px;
+
+    color: #0b1e57;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .drawer .carritoIcon {
+    color: #0b1e57;
+  }
+
+} /* ← cierre del @media */
